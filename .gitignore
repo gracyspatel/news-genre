@@ -18,6 +18,7 @@
 Thumbs.db
 
 # Ignore build artifacts and output
+/env
 /bin
 /build
 /dist
