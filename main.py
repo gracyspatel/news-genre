@@ -153,16 +153,3 @@ y_predicted = svc.predict(x_test)
 print(accuracy_score(y_true=y_test,y_pred=y_predicted)*100)
 print(confusion_matrix(y_true=y_test,y_pred=y_predicted))
 print(classification_report(y_true=y_test,y_pred=y_predicted))
-
-# Example Data
-new_headline="Shiv Sena, BJP to contest all upcoming polls together: Maha CM"
-new_article = """Maharashtra CM Eknath Shinde has announced that the Shiv Sena and BJP will contest all the upcoming elections in the state, including Lok Sabha, Vidhan Sabha and local body elections, together. This comes after Shinde and state Deputy CM Devendra Fadnavis met Union Home Minister Amit Shah in Delhi. He stated that their alliance is "strong" for the state's development."""
-
-data_test = pd.DataFrame({'news_headline': [new_headline] ,'news_article':[new_article]})
-# special symbols removal
-data_test['news_headline'] = data_test['news_headline'].apply(lambda headline: text_cleaning(headline))
-data_test['news_article'] = data_test['news_article'].apply(lambda article: text_cleaning(article))
-data_test = preprocessor.transform(data_test)
-# Decode the encoded labels
-news_genre = encoder_category.inverse_transform(svc.predict(data_test))
-print("Prediction of a new datapoint : ",news_genre[0])
