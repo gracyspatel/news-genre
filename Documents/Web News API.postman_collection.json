@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "9aa758f0-4e7d-43ce-b847-e18506a3ef31",
+		"name": "Web News API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14780633",
+		"_collection_link": "https://lunar-equinox-63823.postman.co/workspace/6f7990e1-0422-464f-87bd-06c55ab5554a/collection/14780633-9aa758f0-4e7d-43ce-b847-e18506a3ef31?action=share&source=collection_link&creator=14780633"
+	},
+	"item": [
+		{
+			"name": "Basic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "Application API"
+			},
+			"response": []
+		},
+		{
+			"name": "Classify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"news_headline\": \"Shiv Sena, BJP to contest all upcoming polls together: Maha CM\",\r\n    \"news_article\": \"Maharashtra CM Eknath Shinde has announced that the Shiv Sena and BJP will contest all the upcoming elections in the state, including Lok Sabha, Vidhan Sabha and local body elections, together. This comes after Shinde and state Deputy CM Devendra Fadnavis met Union Home Minister Amit Shah in Delhi. He stated that their alliance is strong for the state's development.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/classify",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"classify"
+					]
+				},
+				"description": "API that classifies the news article according to its genre."
+			},
+			"response": []
+		}
+	]
+}
